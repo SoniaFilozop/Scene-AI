@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene AI</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/static/script.js" defer></script>
+
+    <style>
+        body { -webkit-tap-highlight-color: transparent; }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-white min-h-screen">
+
+<div class="max-w-md mx-auto p-5">
+
+    <div class="text-center mb-6">
+        <div class="text-4xl">📸</div>
+        <h1 class="text-2xl font-bold">Scene AI</h1>
+        <p class="text-gray-400 text-sm">Определение сцены</p>
+    </div>
+
+    <div class="flex flex-col gap-4 mb-6">
+
+        <label class="bg-blue-600 active:scale-[0.98] transition rounded-2xl py-5 text-center font-semibold text-lg cursor-pointer">
+            📷 Сделать фото
+            <input type="file"
+                   accept="image/*"
+                   capture="environment"
+                   class="hidden"
+                   onchange="handleFile(this)">
+        </label>
+
+        <label class="bg-green-600 active:scale-[0.98] transition rounded-2xl py-5 text-center font-semibold text-lg cursor-pointer">
+            🖼️ Выбрать из галереи
+            <input type="file"
+                   accept="image/*"
+                   class="hidden"
+                   onchange="handleFile(this)">
+        </label>
+
+    </div>
+
+    <div id="imagePreview" class="hidden mb-5"></div>
+    <div id="result" class="hidden"></div>
+
+</div>
+
+</body>
+</html>
